@@ -1,4 +1,4 @@
-# Hisse-Temel-Analiz-Hesaplayici-hasilat-tahminine-dayali
+# Hisse Temel Analiz Hesaplayici (hasilat tahminine dayali)
 python ile temel analiz programı
 Bu programda, standart temel analiz yerine daha güvenli sonuç veren "yıllık hasılat tahmini"ne dayalı temel analiz yapılır.
 
