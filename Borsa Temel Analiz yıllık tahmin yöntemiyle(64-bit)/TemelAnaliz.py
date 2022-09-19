@@ -55,16 +55,16 @@ def KarlilikRasyo():
 
 def Tahminleme():
 
-      HasilatGecenDonem12 = float(input("\n Bir önceki senenin 12 aylık hasılatını giriniz, sayıyı yazarken nokta veya virgül kullanmayınız: "))
-      HasilatGecenDonem9 = float(input("\n Bir önceki senenin 9 aylık hasılatını giriniz, sayıyı yazarken nokta veya virgül kullanmayınız: "))
+      HasilatGuncelDonem = float(input("\n Açıklanan ve güncel en son dönemin hasılat değerini giriniz(örneğin ilk 6 aylık açıklanmışsa 6 aylık tablosundaki hasılatı giriniz), sayıyı yazarken nokta veya virgül kullanmayınız: "))
+      HasilatGecenDonem = float(input("\n Açıklanandan bir önceki hasılat değerini giriniz(örneğin ilk 6 aylık açıklanmışsa, 3 aylık tablosundaki hasılatı giriniz), sayıyı yazarken nokta veya virgül kullanmayınız: "))
       GuncelDonemHasilat = float(input("\n Bu senenin hasılatını giriniz, sayıyı yazarken nokta veya virgül kullanmayınız: "))
       GuncelDonemNetKar = float( input("\n Bu senenin NET DÖNEM KARI değerini(özkaynaklar kısmında) giriniz, sayıyı yazarken nokta veya virgül kullanmayınız: "))
       HisseSenediSayisi = float( input("\n Hisse senedi sayısını(ödenmiş sermaye) giriniz, sayıyı yazarken nokta veya virgül kullanmayınız: "))
       yuzde = float(input("\n Güvenli bir tahmin yapabilmek için, çıkan sonucu yüzde kaç aşağı yuvarlamak istiyorsunuz? Örneğin %15 için sadece 15 yazıp enter'a basınız. En az %10 önerilir."))
       print("")
-      HasilatDegisimKatsayisi = HasilatGecenDonem12/HasilatGecenDonem9
-      YilsonuHasilatTahmini = (HasilatDegisimKatsayisi * GuncelDonemHasilat) - ((HasilatDegisimKatsayisi * GuncelDonemHasilat) * (yuzde/100))
-      NetKarMarji = GuncelDonemNetKar/GuncelDonemHasilat
+      HasilatDegisimKatsayisi = HasilatGuncelDonem/HasilatGecenDonem
+      YilsonuHasilatTahmini = (HasilatDegisimKatsayisi * HasilatGuncelDonem) - ((HasilatDegisimKatsayisi * HasilatGuncelDonem) * (yuzde/100))
+      NetKarMarji = GuncelDonemNetKar/HasilatGuncelDonem
       YilsonuNetKarTahmin = YilsonuHasilatTahmini * NetKarMarji
       HisseBasinaNetKar = YilsonuNetKarTahmin/HisseSenediSayisi
       print("Girilen değerlere göre Hasılat Değişim Katsayısı: ", HasilatDegisimKatsayisi)
